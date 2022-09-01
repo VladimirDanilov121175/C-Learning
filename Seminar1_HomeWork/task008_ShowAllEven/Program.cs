@@ -26,6 +26,14 @@ else
     for (int i = 2; i <= n; i += 2)
     {
         Console.Write(i);
-        Console.Write(" ");
+
+        // Избавляемся от лишней запятой в конце
+        while (i < n)
+        {
+            if (n % 2 != 0)   // Чтобы последнее четное число тоже не имело
+                n = n - 1;
+            Console.Write(", ");
+            break;
+        }
     }
 }
