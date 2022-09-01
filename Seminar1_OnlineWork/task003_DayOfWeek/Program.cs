@@ -7,6 +7,13 @@
 Console.Write("Введите число, соответствующее дню недели: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
+// Защита от дурака, если будет введено другое число
+while (num < 1 || num > 7) // Знак || "или"
+    {
+    Console.WriteLine("Введите число от 1 до 7! Повторите попытку: ");
+    num = Convert.ToInt32(Console.ReadLine());
+    }
+
 if (num == 1)
 {
     Console.WriteLine("Это понедельник");
