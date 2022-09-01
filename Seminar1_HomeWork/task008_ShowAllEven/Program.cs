@@ -26,15 +26,6 @@ else
     for (int i = 2; i <= n; i += 2)
     {
         Console.Write(i);
-
-        // Избавляемся от лишней запятой в конце
-        while (i < n)
-        {
-            Console.Write(", ");
-            break;
-        }
+        Console.Write(" ");
     }
 }
-
-
-// цикл
