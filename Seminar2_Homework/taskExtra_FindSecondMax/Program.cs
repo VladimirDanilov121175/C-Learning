@@ -19,11 +19,11 @@ void FindSecondMax(int[] array)
         {max = array[1]; max2nd = array[0];}
 
     // Прогоняем остальную часть массива
-    for (int i = 2; i < array.Length; i++)
+    for (int j = 2; j < array.Length; j++)
     {
-        if (array[i] > max) { max2nd = max; max = array[i]; }
-        else if (array[i] > max2nd) max2nd = array[i];
-        if (array[i] == 0) break;   // Прерываем перебор массива, когда достигнут 0
+        if (array[j] > max) { max2nd = max; max = array[j]; }
+        else if (array[j] > max2nd) max2nd = array[j];
+        if (array[j] == 0) break;   // Прерываем перебор массива, когда достигнут 0
     }
     Console.WriteLine($"Второе максимальное число: {max2nd}");
 }
