@@ -21,11 +21,11 @@ int xa = 40, ya = 1; // задаем координаты первой верш�
 Console.SetCursorPosition(xa, ya); // Задаем первую вершину
 Console.WriteLine("+");
 // Задаем вторую вершину
-int xb = 0, yb = 35;
+int xb = 0, yb = 37;
 Console.SetCursorPosition(xb, yb);
 Console.WriteLine("+");
 // Третья вершина
-int xc = 80, yc = 35;
+int xc = 80, yc = 37;
 Console.SetCursorPosition(xc, yc);
 Console.WriteLine("+");
 
