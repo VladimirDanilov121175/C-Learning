@@ -12,14 +12,12 @@ void FindSecondMax(int[] array)
     for (int i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
 
-    // Определяем максимум среди первой пары чисел массива
-    int max = array[0];
-    int max2nd = array[1];
-    if (max2nd > max)
-        {max = array[1]; max2nd = array[0];}
-
-    // Прогоняем остальную часть массива
-    for (int j = 2; j < array.Length; j++)
+    // Вводим переменные для первого и второго максимумов
+    int max = 0;
+    int max2nd = 0;
+    
+    // Прогоняем массив
+    for (int j = 0; j < array.Length; j++)
     {
         if (array[j] > max) { max2nd = max; max = array[j]; }
         else if (array[j] > max2nd) max2nd = array[j];
