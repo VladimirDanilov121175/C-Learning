@@ -1,12 +1,20 @@
-﻿string Method4(int count, char symbol)
-{
-    string result = String.Empty;
-    for (int i = 0; i < count; i++)
-    {
-        result = result + symbol;
-    }
-    return result;
-}
+﻿int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n];
 
-string res = Method4(10, 'Z');
-Console.WriteLine(res);
+for (int i = 0; i < array.Length; i++)
+    array[i] = Convert.ToInt32(Console.ReadLine());
+
+int count = 0;
+int count_max = 0;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] > 0)
+        count++;
+    
+    if (array[i] < 0)
+        count = 0;
+    
+    if (count_max < count)
+        count_max = count;
+}
+Console.WriteLine(count_max);
