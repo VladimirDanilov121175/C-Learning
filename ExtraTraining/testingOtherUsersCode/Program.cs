@@ -8,11 +8,11 @@ for (int i = 0; i < n; i++)
 int m = Convert.ToInt32(Console.ReadLine());
 // int[] arraySecond = new int[n];
 bool flag = true;
-for (int i = 0; i < m; i++)
+for (int i = 0; i < n; i++)
 {
     int k = 0;
     int x = Convert.ToInt32(Console.ReadLine());
-    for (int j = 0; j < n; j++)
+    for (int j = 0; j < m; j++)
     {
         if (arrayFirst[j] == x)
         {
