@@ -35,36 +35,21 @@ int[] GenerateArray(int length)
     return array;
 }
 
-// Метод сдвига чисел в массиве
+// Метод сдвига чисел в массиве вправо
 void ShiftNumbersInArray(int[] initArr, int shift)
 {
-    // Создаем новый массив и записываем в него сдвинутые значения
+    // Создаем новый массив, куда будем записывать сдвинутые значения
     int[] newArr = new int[initArr.Length];
+    // Если shift больше длины массива, узнаем остаток (т.е. итоговый сдвиг за вычетом циклических)
+    shift = shift % initArr.Length;
+    // Если shift отрицательный, н-р, -3, это все равно что сдвинуть вправо на разницу
+    // между длиной массива и сдвигом. Отдельный код для сдвига влево писать не нужно, хотя и можно.
+    if (shift < 0) shift = initArr.Length + shift % initArr.Length;  // +, т.к. -shift
 
-    // Сдвигаем вправо или влево, в зависимости от введенного значения
-    if (shift > 0)
+    for (int i = 0; i < initArr.Length; i++)
     {
-        // Если сдвиг больше чем размер массива, т.е. циклический, узнаем остаток, 
-        // он и будет итоговым сдвигом
-        shift = shift % initArr.Length;
-        int difference = initArr.Length - shift;
-
-        for (int i = 0; i < initArr.Length; i++)
-        {
-            if (i < shift) newArr[i] = initArr[difference + i];
-            else newArr[i] = initArr[i - shift];
-        }
-    }
-    else
-    {
-        shift = shift % initArr.Length * -1;
-        int difference = initArr.Length - shift;
-
-        for (int i = 0; i < initArr.Length; i++)
-        {
-            if (i < difference) newArr[i] = initArr[shift + i];
-            else newArr[i] = initArr[i - difference];
-        }
+        if (i < shift) newArr[i] = initArr[initArr.Length - shift + i];
+        else newArr[i] = initArr[i - shift];
     }
     Console.WriteLine("Сдвинутый массив выглядит так: [" + string.Join(", ", newArr) + "]");
 }

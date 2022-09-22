@@ -32,7 +32,7 @@ void PrintArray(int[,] matr)
         for (int j = 0; j < matr.GetLength(1); j++)
         {
             if (matr[i, j] == 0) Console.Write("  ");
-            else Console.Write($"* ");
+            else Console.Write($"*");
         }
         Console.WriteLine();
     }
