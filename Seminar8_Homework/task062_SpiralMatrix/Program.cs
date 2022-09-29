@@ -42,4 +42,4 @@ void PrintMatrix(int[,] matr)
 Console.WriteLine($"Задан двумерный массив размером [4, 4]");
 
 int[,] matrix = new int[4, 4];
-PrintMatrix(SpiralMatrix(spiral: matrix, raw: 4, col: 4, orderNumber: 1));
+PrintMatrix(SpiralMatrix(spiral: matrix, raw: 0, col: 0, orderNumber: 1));
