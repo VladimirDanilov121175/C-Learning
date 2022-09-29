@@ -6,24 +6,24 @@
  */
 Console.Clear();
 
-int[,] SpiralMatrix(int[,] spiral, int raw, int col, int orderNumber)
+int[,] SpiralMatrix(int[,] spiral, int row, int col, int orderNumber)
 {
-    spiral[raw, col] = orderNumber;
+    spiral[row, col] = orderNumber;
 
-    if (raw - 1 < 0 || spiral[raw - 1, col] != 0)
+    if (row - 1 < 0 || spiral[row - 1, col] != 0)
     {
-        if (col + 1 < spiral.GetLength(1) && spiral[raw, col + 1] == 0)
-            return SpiralMatrix(spiral, raw, ++col, ++orderNumber);
+        if (col + 1 < spiral.GetLength(1) && spiral[row, col + 1] == 0)
+            return SpiralMatrix(spiral, row, ++col, ++orderNumber);
     }
 
-    if (raw + 1 < spiral.GetLength(0) && spiral[raw + 1, col] == 0)
-        return SpiralMatrix(spiral, ++raw, col, ++orderNumber);
+    if (row + 1 < spiral.GetLength(0) && spiral[row + 1, col] == 0)
+        return SpiralMatrix(spiral, ++row, col, ++orderNumber);
 
-    if (col > 0 && spiral[raw, col - 1] == 0)
-        return SpiralMatrix(spiral, raw, --col, ++orderNumber);
+    if (col > 0 && spiral[row, col - 1] == 0)
+        return SpiralMatrix(spiral, row, --col, ++orderNumber);
 
-    if (raw > 0 && spiral[raw - 1, col] == 0)
-        return SpiralMatrix(spiral, --raw, col, ++orderNumber);
+    if (row > 0 && spiral[row - 1, col] == 0)
+        return SpiralMatrix(spiral, --row, col, ++orderNumber);
 
     return spiral;
 }
@@ -42,4 +42,4 @@ void PrintMatrix(int[,] matr)
 Console.WriteLine($"Задан двумерный массив размером [4, 4]");
 
 int[,] matrix = new int[4, 4];
-PrintMatrix(SpiralMatrix(spiral: matrix, raw: 0, col: 0, orderNumber: 1));
+PrintMatrix(SpiralMatrix(spiral: matrix, row: 0, col: 0, orderNumber: 1));
